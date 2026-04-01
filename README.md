@@ -3,6 +3,8 @@
 A professional, web-based tool designed for students of **IUBAT** to generate high-quality Lab Report and Assignment cover pages instantly.
 
 ## 🚀 Live Demo
+<img width="665" height="464" alt="ss" src="https://github.com/user-attachments/assets/bc6c2887-1ceb-446b-80ce-f0811eaca3df" />
+
 [[Click Here]](https://amirhamzaa.github.io/cover-page-generator-by-HAMZA/)
 
 ---
