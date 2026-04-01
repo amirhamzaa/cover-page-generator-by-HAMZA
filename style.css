@@ -5,20 +5,24 @@
     box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-    width: 8px;
+/* Mobile স্ক্রিনে কন্টেইনারের হাইট এডজাস্ট করা */
+@media (max-width: 1024px) {
+    #mobile-scale-wrapper {
+        height: 500px; /* Scale এর কারণে যে ফাকা জায়গা তৈরি হয় তা কমানোর জন্য */
+    }
 }
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
+
+@media (max-width: 640px) {
+    #mobile-scale-wrapper {
+        height: 430px;
+    }
+}
+
+/* Scrollbar Style */
+::-webkit-scrollbar {
+    width: 6px;
 }
 ::-webkit-scrollbar-thumb {
     background: #c7d2fe;
     border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #818cf8;
-}
-
-input:focus {
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
