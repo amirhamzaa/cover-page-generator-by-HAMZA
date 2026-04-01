@@ -3,106 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cover Page Generator - HAMZA</title>
+    <title>Cover Page Generator - IUBAT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 min-h-screen p-4 md:p-10 font-sans">
+<body class="bg-slate-50 min-h-screen p-2 md:p-10 font-sans">
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div class="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-10">
         
-        <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 h-fit sticky top-10">
-            <h2 class="text-2xl font-bold mb-6 text-indigo-900 border-b pb-4">Cover Page Generator By HAMZA</h2>
+        <div class="bg-white p-5 md:p-8 rounded-xl shadow-md border border-gray-200 h-fit lg:sticky lg:top-10 order-2 lg:order-1">
+            <h2 class="text-xl md:text-2xl font-bold mb-6 text-indigo-900 border-b pb-4 text-center lg:text-left">Cover Page Generator</h2>
             
-            <form id="coverForm" class="space-y-5">
+            <form id="coverForm" class="space-y-4 md:space-y-5">
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-1">Document Type (Lab Report/Assignment)</label>
-                    <input type="text" id="inDocType" placeholder="e.g. Lab Report or Assignment" class="w-full border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none transition">
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Document Type</label>
+                    <input type="text" id="inDocType" placeholder="Lab Report / Assignment" class="w-full border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Department Name</label>
-                        <input type="text" id="inDept" placeholder="e.g. Computer Science" class="w-full border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none transition">
+                        <input type="text" id="inDept" placeholder="e.g. Computer Science" class="w-full border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">Dept. Logo (Upload)</label>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Dept. Logo</label>
                         <input type="file" id="inDeptLogo" accept="image/*" class="w-full text-sm mt-1">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" id="inCode" placeholder="Course Code" class="border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none transition">
-                    <input type="text" id="inTitle" placeholder="Course Title" class="border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none transition">
+                    <input type="text" id="inCode" placeholder="Course Code" class="border-2 border-gray-100 p-2.5 rounded-lg outline-none">
+                    <input type="text" id="inTitle" placeholder="Course Title" class="border-2 border-gray-100 p-2.5 rounded-lg outline-none">
                 </div>
 
                 <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
-                    <p class="text-xs font-bold text-indigo-600 mb-3 uppercase tracking-wider">Faculty Information *</p>
+                    <p class="text-xs font-bold text-indigo-600 mb-3 uppercase">Faculty Information *</p>
                     <div class="space-y-3">
-                        <input type="text" id="inFacName" placeholder="Faculty Name (Mandatory)" required class="w-full border-2 border-white p-2.5 rounded-lg focus:border-indigo-500 outline-none shadow-sm">
-                        <input type="text" id="inFacDesig" placeholder="Designation (Mandatory)" required class="w-full border-2 border-white p-2.5 rounded-lg focus:border-indigo-500 outline-none shadow-sm">
+                        <input type="text" id="inFacName" placeholder="Faculty Name (Mandatory)" required class="w-full border-2 border-white p-2.5 rounded-lg outline-none shadow-sm">
+                        <input type="text" id="inFacDesig" placeholder="Designation (Mandatory)" required class="w-full border-2 border-white p-2.5 rounded-lg outline-none shadow-sm">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3">
-                    <input type="text" id="inStdName" placeholder="Your Name" class="border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none transition">
-                    <input type="text" id="inStdId" placeholder="ID Number" class="border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none transition">
-                    <input type="text" id="inSection" placeholder="Section" class="border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none transition">
-                    <input type="text" id="inSemester" placeholder="Semester" class="border-2 border-gray-100 p-2.5 rounded-lg focus:border-indigo-500 outline-none transition">
+                    <input type="text" id="inStdName" placeholder="Your Name" class="border-2 border-gray-100 p-2.5 rounded-lg outline-none">
+                    <input type="text" id="inStdId" placeholder="ID Number" class="border-2 border-gray-100 p-2.5 rounded-lg outline-none">
+                    <input type="text" id="inSection" placeholder="Section" class="border-2 border-gray-100 p-2.5 rounded-lg outline-none">
+                    <input type="text" id="inSemester" placeholder="Semester" class="border-2 border-gray-100 p-2.5 rounded-lg outline-none">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold text-red-500 mb-1">Submission Date *</label>
-                    <input type="date" id="inDate" required class="w-full border-2 border-gray-100 p-2.5 rounded-lg focus:border-red-400 outline-none transition">
+                    <input type="date" id="inDate" required class="w-full border-2 border-gray-100 p-2.5 rounded-lg outline-none">
                 </div>
 
-                <div class="pt-4">
-                    <button type="button" onclick="generatePDF()" class="w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold text-lg hover:bg-indigo-700 shadow-lg active:scale-95 transition-all">Download PDF</button>
-                </div>
+                <button type="button" onclick="generatePDF()" class="w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold text-lg hover:bg-indigo-700 shadow-lg active:scale-95 transition-all">Download PDF</button>
             </form>
         </div>
 
-        <div class="flex justify-center bg-gray-300 p-6 rounded-xl shadow-inner overflow-auto h-[90vh]">
-            <div id="preview-page" class="bg-white shadow-2xl w-[595px] h-[842px] p-[60px] flex flex-col items-center relative text-black leading-tight border shrink-0">
-                
-                <div class="w-full flex justify-between items-start mb-16">
-                    <img id="deptLogoPreview" src="https://via.placeholder.com/80?text=Dept+Logo" class="h-16 w-16 object-contain" alt="Dept Logo">
-                    <img src="https://iubat.edu/wp-content/uploads/2019/01/Iubat-logo-300x263.png" class="h-16 object-contain" alt="IUBAT Logo">
-                </div>
-
-                <div class="text-center w-full mb-20">
-                    <h2 class="text-[15px] font-bold tracking-wide uppercase">IUBAT - International University of Business Agriculture and Technology</h2>
-                    <h3 class="text-lg font-bold uppercase mt-1">Department of <span id="outDept">Computer Science and Engineering</span></h3>
-                </div>
-
-                <div class="mt-10 text-center">
-                    <h1 class="text-4xl text-[#C084FC] mb-4 font-serif italic" id="outDocType">Lab Report</h1>
-                    <h2 class="text-2xl font-bold mb-2 tracking-widest" id="outCode">CSE 2398</h2>
-                    <h2 class="text-2xl font-bold" id="outTitle">Database Management System Lab</h2>
-                </div>
-
-                <div class="w-full flex justify-between mt-auto mb-10 gap-4">
-                    <div class="w-1/2">
-                        <h4 class="font-bold underline mb-3 text-base">Submitted To</h4>
-                        <p class="font-bold text-sm" id="outFacName">Faculty Name</p>
-                        <p class="text-xs" id="outFacDesig">Lecturer, IUBAT</p>
+        <div class="flex justify-center bg-gray-300 rounded-xl shadow-inner p-2 md:p-6 overflow-hidden order-1 lg:order-2 h-fit lg:h-[90vh]">
+            <div id="mobile-scale-wrapper" class="origin-top scale-[0.5] sm:scale-[0.7] md:scale-[0.85] lg:scale-100 transition-all">
+                <div id="preview-page" class="bg-white shadow-2xl w-[595px] h-[842px] p-[60px] flex flex-col items-center relative text-black leading-tight border shrink-0">
+                    
+                    <div class="w-full flex justify-between items-start mb-16">
+                        <img id="deptLogoPreview" src="https://via.placeholder.com/80?text=Dept" class="h-16 w-16 object-contain" alt="Dept Logo">
+                        <img src="https://iubat.edu/wp-content/uploads/2019/01/Iubat-logo-300x263.png" class="h-16 object-contain" alt="IUBAT Logo">
                     </div>
 
-                    <div class="w-1/2">
-                        <h4 class="font-bold underline mb-3 text-base">Submitted By</h4>
-                        <div class="space-y-1 text-sm">
-                            <p>Name: <span id="outStdName" class="font-medium">Your Name</span></p>
-                            <p>ID: <span id="outStdId" class="font-medium">your id</span></p>
-                            <p>Course Code: <span id="outCodeSmall" class="font-medium">your code</span></p>
-                            <p>Section: <span id="outSection" class="font-medium">your section</span></p>
-                            <p>Semester: <span id="outSemester" class="font-medium">your semester</span></p>
+                    <div class="text-center w-full mb-20">
+                        <h2 class="text-[15px] font-bold tracking-wide uppercase">IUBAT - International University of Business Agriculture and Technology</h2>
+                        <h3 class="text-lg font-bold uppercase mt-1">Department of <span id="outDept">Computer Science and Engineering</span></h3>
+                    </div>
+
+                    <div class="mt-10 text-center">
+                        <h1 class="text-4xl text-[#C084FC] mb-4 font-serif italic" id="outDocType">Lab Report</h1>
+                        <h2 class="text-2xl font-bold mb-2 tracking-widest" id="outCode">CSE 2398</h2>
+                        <h2 class="text-2xl font-bold uppercase" id="outTitle">Database Management System Lab</h2>
+                    </div>
+
+                    <div class="w-full flex justify-between mt-auto mb-10 gap-4">
+                        <div class="w-1/2 text-left">
+                            <h4 class="font-bold underline mb-3 text-base">Submitted To</h4>
+                            <p class="font-bold text-sm" id="outFacName">Faculty Name</p>
+                            <p class="text-[11px] italic leading-tight text-gray-600 mb-1">MSc (JU), BCSE (IUBAT)</p>
+                            <p class="text-xs" id="outFacDesig">Lecturer, IUBAT</p>
+                        </div>
+
+                        <div class="w-1/2 text-left">
+                            <h4 class="font-bold underline mb-3 text-base">Submitted By</h4>
+                            <div class="space-y-1 text-sm">
+                                <p>Name: <span id="outStdName" class="font-medium">Your Name</span></p>
+                                <p>ID: <span id="outStdId" class="font-medium">your id</span></p>
+                                <p>Course Code: <span id="outCodeSmall" class="font-medium">your code</span></p>
+                                <p>Section: <span id="outSection" class="font-medium">your section</span></p>
+                                <p>Semester: <span id="outSemester" class="font-medium">your semester</span></p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="mt-4 text-sm font-medium">
-                    Date of submission: <span id="outDate">15.12.2025</span>
+                    <div class="mt-4 text-sm font-medium">
+                        Date of submission: <span id="outDate">15.12.2025</span>
+                    </div>
                 </div>
             </div>
         </div>
