@@ -40,7 +40,7 @@ function generatePDF() {
     const subDate = document.getElementById('inDate').value;
 
     if (!facName || !facDesig || !subDate) {
-        alert("ভুল হয়েছে! ফ্যাকাল্টির নাম, পদবী এবং ডেডলাইন অবশ্যই ফিলাপ করতে হবে।");
+        alert("Error; filup faculty name");
         return;
     }
 
