@@ -5,10 +5,10 @@
     box-sizing: border-box;
 }
 
-/* Mobile স্ক্রিনে কন্টেইনারের হাইট এডজাস্ট করা */
+
 @media (max-width: 1024px) {
     #mobile-scale-wrapper {
-        height: 500px; /* Scale এর কারণে যে ফাকা জায়গা তৈরি হয় তা কমানোর জন্য */
+        height: 500px; 
     }
 }
 
